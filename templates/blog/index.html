@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table class="table-bordered">
+    <tbody>
+    {% if latest_meta_list %}
+        {% load pagination_tags %}
+        {% autopaginate latest_meta_list  %}
+
+        {% for element in latest_meta_list %}
+            <tr>
+                <td>{{ element.user_id }}</td>
+                <td>{{ element.username }}</td>
+                <td>{{ element.password }}</td>
+                <td>{{ element.email }}</td>
+                <td>{{ element.telephone }}</td>
+                <td>{{ element.last_login_ip }}</td>
+                <td>{{ element.last_login_date }}</td>
+                <td>{{ element.credit_score }}</td>
+            </tr>
+        {% endfor %}
+        {% paginate %}
+    {% endif %}
+    </tbody>
+</table>
+
+</body>
+</html>
