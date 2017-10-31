@@ -8,6 +8,19 @@
 
 <table class="table-bordered">
     <tbody>
+    <thead>
+    <tr>
+        <td>id</td>
+        <td>username</td>
+        <td>password</td>
+        <td>email</td>
+        <td>telephone</td>
+        <td>ip</td>
+        <td>date</td>
+        <td>score</td>
+    </tr>
+</thead>
+
     {% if latest_meta_list %}
         {% load pagination_tags %}
         {% autopaginate latest_meta_list  %}
